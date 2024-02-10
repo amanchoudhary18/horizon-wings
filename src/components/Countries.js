@@ -43,7 +43,7 @@ const Countries = () => {
           sx={{
             fontFamily: "Montserrat",
             pb: "50px",
-            width: "700px",
+            width: "80%",
           }}
         >
           Our team of experienced professionals recognized the increasing demand
