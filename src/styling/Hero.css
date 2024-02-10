@@ -1,0 +1,56 @@
+.text-animation-right {
+  opacity: 0;
+  transform: translateX(-5%);
+  transition: opacity 0.5s, transform 1s;
+}
+
+.text-animation-right.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.text-animation-left {
+  opacity: 0;
+  transform: translateX(5%);
+  transition: opacity 0.5s, transform 1s;
+}
+
+.text-animation-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.button-animation.animate {
+  bottom: 20px;
+}
+
+@keyframes buttonUp {
+  0% {
+    bottom: -50px;
+  }
+  100% {
+    bottom: 20px;
+  }
+}
+
+.button-animation {
+  animation: buttonUp 0.5s ease-in-out;
+}
+
+.bg-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  transform-origin: center;
+  transition: transform 5s ease-in-out;
+}
+
+.bg-image.animate::before {
+  transform: scale(1.05);
+}
