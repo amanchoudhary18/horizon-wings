@@ -92,6 +92,7 @@ function Navbar() {
                     component="a"
                     href={`#${page.toLowerCase()}`}
                     textAlign="center"
+                    sx={{ textDecoration: "none" }}
                   >
                     {page}
                   </Typography>

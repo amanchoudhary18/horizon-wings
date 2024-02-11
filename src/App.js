@@ -1,6 +1,7 @@
 import "./App.css";
 import Achievements from "./components/Achievements";
 import Countries from "./components/Countries";
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import RegistrationForm from "./components/RegistrationForm";
@@ -22,6 +23,7 @@ function App() {
         }}
       ></div>
       <RegistrationForm />
+      <Footer />
     </div>
   );
 }

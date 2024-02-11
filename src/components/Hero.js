@@ -69,7 +69,7 @@ const Hero = () => {
             }}
             className={`text-animation-left ${animate ? "animate" : ""}`}
           >
-            Education
+            Overseas Education
           </Typography>
 
           <Typography
@@ -87,37 +87,38 @@ const Hero = () => {
             —---
           </Typography>
 
-          <Button
-            className={`button-animation ${animate ? "animate" : ""}`}
-            variant="outlined"
-            sx={{
-              mt: 2,
-              border: "1px solid white",
-              color: "white",
-              padding: "10px 7px",
-              width: "200px",
-              textAlign: "center",
-              textTransform: "capitalize",
-
-              "&:hover": {
-                backgroundColor: "white",
-                color: "#162E40",
-                border: "1px solid white",
-              },
-            }}
-          >
-            <Typography
+          <a href="#register" style={{ textDecoration: "none" }}>
+            <Button
+              className={`button-animation ${animate ? "animate" : ""}`}
+              variant="outlined"
               sx={{
-                fontFamily: "Poppins",
-                textDecoration: "none",
-                fontWeight: "400",
-                fontSize: "17px",
-                lineHeight: 1.2,
+                mt: 2,
+                border: "1px solid white",
+                color: "white",
+                padding: "10px 7px",
+                width: "200px",
+                textAlign: "center",
+                textTransform: "capitalize",
+
+                "&:hover": {
+                  backgroundColor: "white",
+                  color: "#162E40",
+                  border: "1px solid white",
+                },
               }}
             >
-              Register Now
-            </Typography>
-          </Button>
+              <Typography
+                sx={{
+                  fontFamily: "Poppins",
+                  fontWeight: "400",
+                  fontSize: "17px",
+                  lineHeight: 1.2,
+                }}
+              >
+                Register Now
+              </Typography>
+            </Button>
+          </a>
         </div>
       </Box>
       <Box
@@ -167,7 +168,7 @@ const Hero = () => {
               fontWeight: "700",
             }}
           >
-            Education
+            Overseas Education
           </Typography>
 
           <Typography
@@ -245,7 +246,7 @@ const Hero = () => {
             Take a fly in your career with
           </Typography>
           <Typography
-            variant="h4"
+            variant="h5"
             sx={{
               mr: 2,
               color: "white",
@@ -257,7 +258,7 @@ const Hero = () => {
             Horizon Wings
           </Typography>
           <Typography
-            variant="h4"
+            variant="h5"
             sx={{
               mr: 2,
               color: "white",
@@ -266,7 +267,7 @@ const Hero = () => {
               fontWeight: "700",
             }}
           >
-            Education
+            Overseas Education
           </Typography>
 
           <Typography

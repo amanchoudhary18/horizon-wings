@@ -12,8 +12,7 @@ import {
   Rating,
 } from "@mui/material";
 import formbg from "../assets/world-pattern.png";
-
-// ... (existing imports)
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -43,12 +42,13 @@ const RegistrationForm = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         overflow: "hidden",
+        paddingBottom: "50px",
       }}
     >
       <Grid
         container
         spacing={2}
-        sx={{ pt: "150px", px: "70px" }}
+        sx={{ pt: "150px", px: { sm: "16px", lg: "70px" } }}
         id="register"
       >
         <Grid item xs={12} lg={6}>
@@ -60,11 +60,11 @@ const RegistrationForm = () => {
             }}
           >
             <Typography
-              variant="h3"
               sx={{
                 marginBottom: "20px",
                 fontFamily: "Poppins",
                 lineHeight: 0.8,
+                fontSize: { xs: "40px", md: "50px", lg: "3.0rem" },
               }}
             >
               Register Now
