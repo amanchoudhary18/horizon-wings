@@ -81,7 +81,7 @@ const Footer = () => {
           align="center"
           sx={{ color: "white", py: 2, fontFamily: "Poppins" }}
         >
-          Horizon Wings Overseas &copy; {new Date().getFullYear()} All Rights
+          Horizonwings Overseas &copy; {new Date().getFullYear()} All Rights
           Reserved
         </Typography>
       </Box>

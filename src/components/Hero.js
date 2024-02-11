@@ -55,7 +55,7 @@ const Hero = () => {
               lineHeight: 1.2,
             }}
           >
-            Horizon Wings
+            Horizonwings
           </Typography>
           <Typography
             sx={{
@@ -156,7 +156,7 @@ const Hero = () => {
               fontWeight: "700",
             }}
           >
-            Horizon Wings
+            Horizonwings
           </Typography>
           <Typography
             variant="h3"
@@ -185,38 +185,39 @@ const Hero = () => {
           >
             —---
           </Typography>
-
-          <Button
-            className={`button-animation ${animate ? "animate" : ""}`}
-            variant="outlined"
-            sx={{
-              mt: 2,
-              border: "1px solid white",
-              color: "white",
-              padding: "5px 7px",
-              width: "125px",
-              textAlign: "center",
-              textTransform: "capitalize",
-
-              "&:hover": {
-                backgroundColor: "white",
-                color: "#162E40",
-                border: "1px solid white",
-              },
-            }}
-          >
-            <Typography
+          <a href="#register" style={{ textDecoration: "none" }}>
+            <Button
+              className={`button-animation ${animate ? "animate" : ""}`}
+              variant="outlined"
               sx={{
-                fontFamily: "Poppins",
-                textDecoration: "none",
-                fontWeight: "400",
-                fontSize: "13px",
-                lineHeight: 1.2,
+                mt: 2,
+                border: "1px solid white",
+                color: "white",
+                padding: "5px 7px",
+                width: "125px",
+                textAlign: "center",
+                textTransform: "capitalize",
+
+                "&:hover": {
+                  backgroundColor: "white",
+                  color: "#162E40",
+                  border: "1px solid white",
+                },
               }}
             >
-              Register Now
-            </Typography>
-          </Button>
+              <Typography
+                sx={{
+                  fontFamily: "Poppins",
+                  textDecoration: "none",
+                  fontWeight: "400",
+                  fontSize: "13px",
+                  lineHeight: 1.2,
+                }}
+              >
+                Register Now
+              </Typography>
+            </Button>
+          </a>
         </div>
       </Box>
 
@@ -255,7 +256,7 @@ const Hero = () => {
               fontWeight: "700",
             }}
           >
-            Horizon Wings
+            Horizonwings
           </Typography>
           <Typography
             variant="h5"
@@ -285,37 +286,39 @@ const Hero = () => {
             —---
           </Typography>
 
-          <Button
-            className={`button-animation ${animate ? "animate" : ""}`}
-            variant="outlined"
-            sx={{
-              mt: 2,
-              border: "1px solid white",
-              color: "white",
-              padding: "5px 7px",
-              width: "100px",
-              textAlign: "center",
-              textTransform: "capitalize",
-
-              "&:hover": {
-                backgroundColor: "white",
-                color: "#162E40",
-                border: "1px solid white",
-              },
-            }}
-          >
-            <Typography
+          <a href="#register" style={{ textDecoration: "none" }}>
+            <Button
+              className={`button-animation ${animate ? "animate" : ""}`}
+              variant="outlined"
               sx={{
-                fontFamily: "Poppins",
-                textDecoration: "none",
-                fontWeight: "400",
-                fontSize: "10px",
-                lineHeight: 1.2,
+                mt: 2,
+                border: "1px solid white",
+                color: "white",
+                padding: "5px 7px",
+                width: "100px",
+                textAlign: "center",
+                textTransform: "capitalize",
+
+                "&:hover": {
+                  backgroundColor: "white",
+                  color: "#162E40",
+                  border: "1px solid white",
+                },
               }}
             >
-              Register Now
-            </Typography>
-          </Button>
+              <Typography
+                sx={{
+                  fontFamily: "Poppins",
+                  textDecoration: "none",
+                  fontWeight: "400",
+                  fontSize: "10px",
+                  lineHeight: 1.2,
+                }}
+              >
+                Register Now
+              </Typography>
+            </Button>
+          </a>
         </div>
       </Box>
     </div>

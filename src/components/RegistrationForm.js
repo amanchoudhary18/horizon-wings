@@ -12,15 +12,16 @@ import {
   Rating,
 } from "@mui/material";
 import formbg from "../assets/world-pattern.png";
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import axios from "axios";
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     name: "",
-    contactNo: "",
-    email: "",
+    mobile: "",
+    emailId: "",
     gender: "",
-    education: "",
+    countryCode: "91",
+    previousEducation: "",
   });
 
   const handleChange = (field) => (event) => {
@@ -30,9 +31,41 @@ const RegistrationForm = () => {
     });
   };
 
-  const handleRegister = () => {
+  const handleRegister = async () => {
     console.log("Registration Data:", formData);
-    // You can perform further actions here, such as sending data to the server.
+
+    if (!formData.name || !formData.emailId || !formData.mobile) {
+      alert("Please enter the mandatory fields");
+      return;
+    }
+
+    try {
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      const response = await axios.post(
+        "https://horizonwings-production.up.railway.app/api/v1/registerStudent",
+        formData,
+        config
+      );
+
+      alert("Response submitted successfully !");
+      setFormData({
+        name: "",
+        mobile: "",
+        emailId: "",
+        gender: "",
+        countryCode: "91",
+        previousEducation: "",
+      });
+
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -96,8 +129,8 @@ const RegistrationForm = () => {
               fullWidth
               margin="normal"
               placeholder="Contact No. *"
-              value={formData.contactNo}
-              onChange={handleChange("contactNo")}
+              value={formData.mobile}
+              onChange={handleChange("mobile")}
               InputProps={{ sx: { color: "white" } }}
               sx={{ backgroundColor: "#476C92", borderRadius: "5px" }}
               required
@@ -107,8 +140,8 @@ const RegistrationForm = () => {
               fullWidth
               margin="normal"
               placeholder="Email ID *"
-              value={formData.email}
-              onChange={handleChange("email")}
+              value={formData.emailId}
+              onChange={handleChange("emailId")}
               InputProps={{ sx: { color: "white" } }}
               sx={{
                 backgroundColor: "#476C92",
@@ -127,9 +160,9 @@ const RegistrationForm = () => {
                 sx={{ backgroundColor: "#476C92" }}
                 inputProps={{ sx: { color: "white" } }}
               >
-                <MenuItem value="male">Male</MenuItem>
-                <MenuItem value="female">Female</MenuItem>
-                <MenuItem value="others">Others</MenuItem>
+                <MenuItem value="MALE">Male</MenuItem>
+                <MenuItem value="FEMALE">Female</MenuItem>
+                <MenuItem value="OTHERS">Others</MenuItem>
               </Select>
             </FormControl>
             <FormControl fullWidth margin="normal">
@@ -137,16 +170,18 @@ const RegistrationForm = () => {
                 Previous Education
               </InputLabel>
               <Select
-                value={formData.education}
-                onChange={handleChange("education")}
+                value={formData.previousEducation}
+                onChange={handleChange("previousEducation")}
                 label=""
                 sx={{ backgroundColor: "#476C92" }}
                 inputProps={{ sx: { color: "white" } }}
               >
-                <MenuItem value="highSchool">High School</MenuItem>
-                <MenuItem value="secondaryEd">Secondary Education</MenuItem>
-                <MenuItem value="underGraduate">Under Graduate</MenuItem>
-                <MenuItem value="postGraduate">Post Graduate</MenuItem>
+                <MenuItem value="HIGH_SCHOOL">High School</MenuItem>
+                <MenuItem value="SECONDARY_EDUCATION">
+                  Secondary Education
+                </MenuItem>
+                <MenuItem value="UNDER_GRADUATE">Under Graduate</MenuItem>
+                <MenuItem value="POST_GRADUATE">Post Graduate</MenuItem>
               </Select>
             </FormControl>
 
@@ -186,12 +221,13 @@ const RegistrationForm = () => {
                 variant="h2"
                 sx={{ fontWeight: 500, fontFamily: "Poppins", pt: "16px" }}
               >
-                4.8/5
+                4.5/5
               </Typography>
 
               <Rating
                 name="read-only"
-                value={4.8}
+                value={4.5}
+                precision={0.5}
                 readOnly
                 sx={{ fontSize: "80px" }}
               />
