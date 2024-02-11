@@ -11,7 +11,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div style={{ overflow: "hidden" }}>
+    <div style={{ overflow: "hidden" }} id="home">
       <Box
         className={`bg-image ${animate ? "animate" : ""}`}
         sx={{
@@ -169,6 +169,53 @@ const Hero = () => {
           >
             Education
           </Typography>
+
+          <Typography
+            sx={{
+              mr: 2,
+              color: "white",
+              fontFamily: "Poppins",
+              textDecoration: "none",
+              fontWeight: "400",
+              fontSize: "40px",
+              lineHeight: 1.2,
+            }}
+            className={`text-animation-left ${animate ? "animate" : ""}`}
+          >
+            —---
+          </Typography>
+
+          <Button
+            className={`button-animation ${animate ? "animate" : ""}`}
+            variant="outlined"
+            sx={{
+              mt: 2,
+              border: "1px solid white",
+              color: "white",
+              padding: "5px 7px",
+              width: "125px",
+              textAlign: "center",
+              textTransform: "capitalize",
+
+              "&:hover": {
+                backgroundColor: "white",
+                color: "#162E40",
+                border: "1px solid white",
+              },
+            }}
+          >
+            <Typography
+              sx={{
+                fontFamily: "Poppins",
+                textDecoration: "none",
+                fontWeight: "400",
+                fontSize: "13px",
+                lineHeight: 1.2,
+              }}
+            >
+              Register Now
+            </Typography>
+          </Button>
         </div>
       </Box>
 
@@ -221,6 +268,53 @@ const Hero = () => {
           >
             Education
           </Typography>
+
+          <Typography
+            sx={{
+              mr: 2,
+              color: "white",
+              fontFamily: "Poppins",
+              textDecoration: "none",
+              fontWeight: "400",
+              fontSize: "30px",
+              lineHeight: 1.2,
+            }}
+            className={`text-animation-left ${animate ? "animate" : ""}`}
+          >
+            —---
+          </Typography>
+
+          <Button
+            className={`button-animation ${animate ? "animate" : ""}`}
+            variant="outlined"
+            sx={{
+              mt: 2,
+              border: "1px solid white",
+              color: "white",
+              padding: "5px 7px",
+              width: "100px",
+              textAlign: "center",
+              textTransform: "capitalize",
+
+              "&:hover": {
+                backgroundColor: "white",
+                color: "#162E40",
+                border: "1px solid white",
+              },
+            }}
+          >
+            <Typography
+              sx={{
+                fontFamily: "Poppins",
+                textDecoration: "none",
+                fontWeight: "400",
+                fontSize: "10px",
+                lineHeight: 1.2,
+              }}
+            >
+              Register Now
+            </Typography>
+          </Button>
         </div>
       </Box>
     </div>

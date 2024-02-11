@@ -9,6 +9,7 @@ import {
   Box,
   Typography,
   Grid,
+  Rating,
 } from "@mui/material";
 import formbg from "../assets/world-pattern.png";
 
@@ -44,8 +45,13 @@ const RegistrationForm = () => {
         overflow: "hidden",
       }}
     >
-      <Grid container spacing={2} sx={{ pt: "150px", px: "70px" }}>
-        <Grid item xs={12} md={6}>
+      <Grid
+        container
+        spacing={2}
+        sx={{ pt: "150px", px: "70px" }}
+        id="register"
+      >
+        <Grid item xs={12} lg={6}>
           <Box
             sx={{
               padding: "20px",
@@ -151,8 +157,47 @@ const RegistrationForm = () => {
             </Button>
           </Box>
         </Grid>
-        {/* Right half for the image (replace the image source as needed) */}
-        <Grid item xs={12} md={6}></Grid>
+
+        <Grid item xs={6} sx={{ display: { xs: "none", lg: "block" } }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              pt: 2,
+            }}
+          >
+            <Box sx={{ mb: 2, color: "white" }}>
+              <Typography
+                variant="h3"
+                sx={{
+                  marginBottom: "20px",
+                  fontFamily: "Poppins",
+                  lineHeight: 0.8,
+                }}
+              >
+                Customer Ratings
+              </Typography>
+
+              <Typography
+                variant="h2"
+                sx={{ fontWeight: 500, fontFamily: "Poppins", pt: "16px" }}
+              >
+                4.8/5
+              </Typography>
+
+              <Rating
+                name="read-only"
+                value={4.8}
+                readOnly
+                sx={{ fontSize: "80px" }}
+              />
+              <Typography variant="body1" sx={{ px: 1, pt: 5 }}>
+                By 50000+ Customers
+              </Typography>
+            </Box>
+          </Box>
+        </Grid>
       </Grid>
     </div>
   );

@@ -42,64 +42,77 @@ const Services = () => {
   ];
 
   return (
-    <>
-      <Grid container sx={{ mt: "100px" }}>
-        {cardsData.map((card) => (
-          <Grid item key={card.id} xs={12} sm={6} md={3}>
-            <Card sx={{ width: 320, mx: "auto" }}>
-              <CardMedia
-                component="img"
-                alt={card.title}
-                height="300"
-                image={card.imageUrl}
-                sx={{
-                  transition: "transform 0.5s ease-in-out",
-                  "&:hover": {
-                    transform: "scale(1.05)",
-                  },
-                }}
-              />
-              <CardContent
-                style={{
-                  backgroundColor: "white",
-                  height: "75px",
-                  textAlign: "center",
-                }}
-              >
-                <Typography
-                  variant="h5"
-                  component="div"
-                  sx={{ color: "#162E40", fontWeight: "500" }}
-                >
-                  {card.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {card.description}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-
-      <Box sx={{ bgcolor: "#2D5883", minHeight: "200px", marginTop: "-116px" }}>
+    <Box sx={{ bgcolor: "#2D5883", py: "50px" }} id="services">
+      <Box sx={{ mx: { xs: "30px", sm: "50px", md: "100px", lg: "50px" } }}>
         <Typography
-          variant="h3"
           color="white"
           sx={{
-            pt: "175px",
+            pt: "50px",
             fontFamily: "Montserrat",
             display: "flex",
             flexDirection: "row",
             justifyContent: "center",
             fontWeight: 600,
             pb: "50px",
+            fontSize: { xs: "30px", sm: "35px", md: "40px", lg: "50px" },
+            textAlign: "center",
           }}
         >
           Unparalled Service across all domains
         </Typography>
+
+        <Grid container sx={{ mt: "20px" }}>
+          {cardsData.map((card) => (
+            <Grid item key={card.id} xs={12} sm={6} md={6} lg={3}>
+              <Card
+                sx={{
+                  width: {
+                    xs: "250px",
+                    sm: "275px",
+                    md: "300px",
+                    lg: "250px",
+                    xl: "275px",
+                  },
+                  mx: "auto",
+                  my: 2,
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  alt={card.title}
+                  height="300"
+                  image={card.imageUrl}
+                  sx={{
+                    transition: "transform 0.5s ease-in-out",
+                    "&:hover": {
+                      transform: "scale(1.05)",
+                    },
+                  }}
+                />
+                <CardContent
+                  style={{
+                    backgroundColor: "white",
+                    height: "75px",
+                    textAlign: "center",
+                  }}
+                >
+                  <Typography
+                    variant="h5"
+                    component="div"
+                    sx={{ color: "#162E40", fontWeight: "500" }}
+                  >
+                    {card.title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {card.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       </Box>
-    </>
+    </Box>
   );
 };
 

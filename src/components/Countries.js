@@ -1,18 +1,19 @@
 import React, { useState } from "react";
-import { Grid, Paper, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import us from "../assets/us.svg";
 import uk from "../assets/uk.png";
 import ireland from "../assets/ireland.svg";
 import dubai from "../assets/dubai.png";
 import aus from "../assets/aus.svg";
 import canada from "../assets/canada.svg";
+import "../styling/countries.css";
 
 const Countries = () => {
   const [selectedCountry, setSelectedCountry] = useState(null);
 
   const countries = [
-    { id: 1, name: "USA", flagUrl: uk },
-    { id: 2, name: "United Kingdom", flagUrl: us },
+    { id: 1, name: "USA", flagUrl: us },
+    { id: 2, name: "UK", flagUrl: uk },
     { id: 3, name: "Canada", flagUrl: canada },
     { id: 4, name: "Australia", flagUrl: aus },
     { id: 5, name: "Ireland", flagUrl: ireland },
@@ -24,8 +25,18 @@ const Countries = () => {
   };
 
   return (
-    <Grid container spacing={2} sx={{ pt: "175px", px: "50px", pb: "50px" }}>
-      <Grid item xs={7}>
+    <Grid
+      container
+      spacing={2}
+      sx={{
+        pt: "175px",
+        px: { xs: "16px", md: "50px" },
+        pb: { xs: "16px", md: "50px" },
+      }}
+      id="about"
+    >
+      {/* Left Half - Static Content */}
+      <Grid item xs={12} lg={6} xl={7}>
         <Typography color="text.secondary">We help our clients in</Typography>
         <Typography
           variant="h3"
@@ -37,13 +48,12 @@ const Countries = () => {
         >
           Multiple Locations
         </Typography>
-
         <Typography
           variant="body1"
           sx={{
             fontFamily: "Montserrat",
             pb: "50px",
-            width: "80%",
+            width: { xs: "100%", lg: "80%" },
           }}
         >
           Our team of experienced professionals recognized the increasing demand
@@ -56,33 +66,34 @@ const Countries = () => {
       </Grid>
 
       {/* Right Half - Dynamic Content */}
-      <Grid item xs={5} sx={{ marginTop: "80px" }}>
-        <Grid container spacing={2}>
+      <Grid
+        item
+        xs={12}
+        lg={6}
+        xl={5}
+        sx={{
+          marginTop: { md: "20px", lg: "80px" },
+          mx: { md: "100px", lg: "0px" },
+        }}
+      >
+        <Grid container spacing={3}>
           {countries.map((country) => (
-            <Grid item key={country.id} xs={4}>
+            <Grid item key={country.id} xs={6} md={4}>
               <div
+                className="country-container"
                 onClick={() => handleCountryClick(country)}
-                style={{ cursor: "pointer" }}
+                style={{ textAlign: "center" }}
               >
                 <img
                   src={country.flagUrl}
                   alt={country.name}
-                  style={{
-                    width: "150px",
-                    height: "75px",
-                    marginBottom: "10px",
-                  }}
+                  className={`country-flag ${
+                    selectedCountry === country ? "selected" : ""
+                  }`}
                 />
-                {/* <Typography
-                  variant="body2"
-                  sx={{
-                    fontFamily: "Montserrat",
-                    fontWeight: 500,
-                    mb: 3,
-                  }}
-                >
+                <Typography variant="body2" className="country-name">
                   {country.name}
-                </Typography> */}
+                </Typography>
               </div>
             </Grid>
           ))}

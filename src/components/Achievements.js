@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, CardContent, Typography, Grid } from "@mui/material";
+import { Card, CardContent, Typography, Grid, Box } from "@mui/material";
 import { useInView } from "react-intersection-observer";
 
 const CounterCard = ({ label, initialValue, successRate }) => {
@@ -23,13 +23,22 @@ const CounterCard = ({ label, initialValue, successRate }) => {
   }, [inView, initialValue]);
 
   return (
-    <div ref={ref}>
-      <Card sx={{ width: "300px", height: "170px" }}>
+    <div ref={ref} style={{ width: "max-content", margin: "20px auto" }}>
+      <Card
+        sx={{
+          width: { xs: "250px", md: "300px", lg: "250px" },
+          height: "170px",
+        }}
+      >
         <CardContent>
           <Typography
-            variant="h2"
             align="center"
-            sx={{ color: "purple", pb: "20px" }}
+            sx={{
+              color: "purple",
+              pb: "20px",
+              fontSize: { xs: "50px", md: "55px", lg: "60px" },
+              fontWeight: 400,
+            }}
           >
             {counterValue}
             {successRate ? "%" : "+"}
@@ -68,13 +77,23 @@ const FastCounterCard = ({ label, initialValue, successRate }) => {
   }, [inView, initialValue]);
 
   return (
-    <div ref={ref}>
-      <Card sx={{ width: "300px", height: "170px" }}>
+    <div ref={ref} style={{ width: "max-content", margin: "20px auto" }}>
+      <Card
+        sx={{
+          width: { xs: "250px", md: "300px", lg: "250px" },
+          height: "170px",
+        }}
+      >
         <CardContent>
           <Typography
             variant="h2"
             align="center"
-            sx={{ color: "purple", pb: "20px" }}
+            sx={{
+              color: "purple",
+              pb: "20px",
+              fontSize: { xs: "50px", md: "55px", lg: "60px" },
+              fontWeight: 400,
+            }}
           >
             {counterValue}
             {successRate && "%"}+
@@ -94,33 +113,41 @@ const FastCounterCard = ({ label, initialValue, successRate }) => {
 
 const Achievements = () => {
   return (
-    <div
-      style={{
-        padding: "0 80px 20px",
+    <Box
+      sx={{
+        padding: { xs: "25px 16px", md: "0 80px 20px" },
+        alignContent: "center",
+        display: "flex",
       }}
     >
-      <Grid container spacing={1} justifyContent="center">
-        <Grid item xs={12} sm={6} md={3}>
+      <Grid
+        container
+        spacing={1}
+        justifyContent="center"
+        alignItems="center"
+        style={{ textAlign: "center" }}
+      >
+        <Grid item xs={12} sm={6} md={6} lg={3}>
           <CounterCard label="Top Universities" initialValue={750} />
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid item xs={12} sm={6} md={6} lg={3}>
           <CounterCard
             label="Success rate"
             initialValue={99}
             successRate={99}
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid item xs={12} sm={6} md={6} lg={3}>
           <CounterCard label="Year of Experience" initialValue={8} />
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid item xs={12} sm={6} md={6} lg={3}>
           <FastCounterCard
             label="Student supported and Enrolled"
             initialValue={50000}
           />
         </Grid>
       </Grid>
-    </div>
+    </Box>
   );
 };
 
