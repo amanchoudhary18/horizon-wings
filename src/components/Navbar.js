@@ -51,7 +51,14 @@ function Navbar() {
             alignItems: "center",
           }}
         >
-          <img src={logo} alt="logo" className="logo" />
+          <a href="#home">
+            <img
+              src={logo}
+              alt="logo"
+              className="logo"
+              style={{ cursor: "pointer" }}
+            />
+          </a>
           <Box
             sx={{
               display: { xs: "flex", md: "none" },
