@@ -4,16 +4,39 @@
 }
 
 .country-flag {
-  width: 150px;
-  height: 75px;
+  width: 100px;
+  height: 50px;
   margin-bottom: 10px;
   transition: filter 0.3s ease, transform 0.3s ease; /* Combine transitions */
 }
 
+@media (min-width: 576px) {
+  .country-flag {
+    width: 100px;
+    height: 50px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .country-flag {
+    width: 140px;
+    height: 70px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .country-flag {
+    width: 150px;
+    height: 75px;
+  }
+}
+
 .country-name {
   position: absolute;
-  top: 41%;
-  left: 41%;
+  top: 45%;
+  left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0; /* Initially hidden */
   transition: opacity 0.3s ease;

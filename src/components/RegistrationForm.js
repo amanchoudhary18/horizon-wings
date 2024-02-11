@@ -64,17 +64,17 @@ const RegistrationForm = () => {
                 marginBottom: "20px",
                 fontFamily: "Poppins",
                 lineHeight: 0.8,
-                fontSize: { xs: "40px", md: "50px", lg: "3.0rem" },
+                fontSize: { xs: "30px", md: "50px", lg: "3.0rem" },
               }}
             >
               Register Now
             </Typography>
             <Typography
-              variant="body2"
               sx={{
                 marginBottom: "20px",
                 fontFamily: "Poppins",
                 lineHeight: 0.7,
+                fontSize: { xs: "16px", md: "25px", lg: "1.0rem" },
               }}
             >
               Make your dreams come true today!

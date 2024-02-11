@@ -29,7 +29,7 @@ const Countries = () => {
       container
       spacing={2}
       sx={{
-        pt: "175px",
+        pt: { xs: "50px", md: "175px" },
         px: { xs: "16px", md: "50px" },
         pb: { xs: "16px", md: "50px" },
       }}
@@ -39,11 +39,11 @@ const Countries = () => {
       <Grid item xs={12} lg={6} xl={7}>
         <Typography color="text.secondary">We help our clients in</Typography>
         <Typography
-          variant="h3"
           sx={{
             fontFamily: "Montserrat",
             fontWeight: 600,
             pb: "50px",
+            fontSize: { xs: "25px", md: "40px", lg: "50px" },
           }}
         >
           Multiple Locations

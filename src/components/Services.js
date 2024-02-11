@@ -47,14 +47,14 @@ const Services = () => {
         <Typography
           color="white"
           sx={{
-            pt: "50px",
+            pt: { xs: "15px", md: "50px" },
             fontFamily: "Montserrat",
             display: "flex",
             flexDirection: "row",
             justifyContent: "center",
             fontWeight: 600,
-            pb: "50px",
-            fontSize: { xs: "30px", sm: "35px", md: "40px", lg: "50px" },
+            pb: { xs: "15px", md: "50px" },
+            fontSize: { xs: "20px", sm: "28px", md: "35px", lg: "50px" },
             textAlign: "center",
           }}
         >
@@ -67,9 +67,8 @@ const Services = () => {
               <Card
                 sx={{
                   width: {
-                    xs: "250px",
-                    sm: "275px",
-                    md: "300px",
+                    xs: "260px",
+                    sm: "300px",
                     lg: "250px",
                     xl: "275px",
                   },
@@ -80,12 +79,16 @@ const Services = () => {
                 <CardMedia
                   component="img"
                   alt={card.title}
-                  height="300"
                   image={card.imageUrl}
                   sx={{
                     transition: "transform 0.5s ease-in-out",
                     "&:hover": {
                       transform: "scale(1.05)",
+                    },
+                    height: {
+                      xs: "225px",
+                      lg: "250px",
+                      xl: "300px",
                     },
                   }}
                 />
@@ -97,7 +100,7 @@ const Services = () => {
                   }}
                 >
                   <Typography
-                    variant="h5"
+                    variant={{ md: "h5", xs: "h6" }}
                     component="div"
                     sx={{ color: "#162E40", fontWeight: "500" }}
                   >
