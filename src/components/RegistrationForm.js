@@ -84,27 +84,29 @@ const RegistrationForm = () => {
               label=""
               fullWidth
               margin="normal"
-              placeholder="Name"
+              placeholder="Name *"
               value={formData.name}
               onChange={handleChange("name")}
               InputProps={{ sx: { color: "white" } }}
               sx={{ backgroundColor: "#476C92", borderRadius: "5px" }}
+              required
             />
             <TextField
               label=""
               fullWidth
               margin="normal"
-              placeholder="Contact No."
+              placeholder="Contact No. *"
               value={formData.contactNo}
               onChange={handleChange("contactNo")}
               InputProps={{ sx: { color: "white" } }}
               sx={{ backgroundColor: "#476C92", borderRadius: "5px" }}
+              required
             />
             <TextField
               label=""
               fullWidth
               margin="normal"
-              placeholder="Email ID"
+              placeholder="Email ID *"
               value={formData.email}
               onChange={handleChange("email")}
               InputProps={{ sx: { color: "white" } }}
@@ -112,6 +114,7 @@ const RegistrationForm = () => {
                 backgroundColor: "#476C92",
                 borderRadius: "5px",
               }}
+              required
             />
             <FormControl fullWidth margin="normal">
               <InputLabel htmlFor="gender" sx={{ color: "white" }}>
