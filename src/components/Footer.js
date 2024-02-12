@@ -47,7 +47,7 @@ const Footer = () => {
               <IconButton
                 color="inherit"
                 component={Link}
-                href="your-linkedin-url"
+                href="https://www.linkedin.com/company/horizonwings-overseas-education/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -56,7 +56,7 @@ const Footer = () => {
               <IconButton
                 color="inherit"
                 component={Link}
-                href="your-instagram-url"
+                href="https://www.instagram.com/horizonwings_overseaseducation"
                 target="_blank"
                 rel="noopener noreferrer"
               >
